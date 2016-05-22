@@ -95,14 +95,23 @@
                   </span>
                 </div>
               </li>
-              <li><a href="https://www.youtube.com/channel/UCvqRdlKsE5Q8mf8YXbdIJLw" target="_blank">LoL eSport YT Channel</a></li>
+              <li><a href="https://www.youtube.com/channel/" target="_blank">Youtube Video ID Only</a></li>
             </ul>
           </li>
           <li role="presentation" class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                Riot's TTV Chat Rooms<span class="caret"></span>
+                Chat Rooms<span class="caret"></span>
             </a>
             <ul id="chatList" class="dropdown-menu">
+			 <li>
+                <div class="input-group">
+                  <input id="custom-chat-id" type="text" class="form-control" placeholder="Chat ID...">
+                  <span class="input-group-btn">
+                    <button id="custom-chat-btn" class="btn btn-default" type="button">Chat!</button>
+                  </span>
+                </div>
+              </li>
+			 <li><a href=''https://twtich.tv" target="_black">Name of Twitch Channel Only</a></li>
             </ul>
           </li>
         </ul>
@@ -142,20 +151,7 @@
     var optionsWrapper = $("#optionsWrapper");
     var chatOnLeft = $("input[type='checkbox']#chatOnLeft");
     var streams = []
-    var chats = [
-      {
-        title: "Riot Games (Main)",
-        channel: "riotgames"
-      },
-      {
-        title: "Riot Games 2",
-        channel: "riotgames2"
-      },
-      {
-        title: "Riot Games 3",
-        channel: "riotgames3"
-      }
-    ]
+    var chats = []
     var streamSize = 9;
     var chatSize = 3;
     function setRatio(stream, chat){
@@ -206,6 +202,9 @@
       });
       $("#custom-video-btn").click(function(){
         switchStream($("#custom-video-id").val());
+      });
+	   $("#custom-chat-btn").click(function(){
+        switchChat($("#custom-chat-id").val().toLowerCase());
       });
     });
   </script>
